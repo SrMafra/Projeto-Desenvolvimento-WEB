@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CadastarAdvertencia extends Model
+class Epi extends Model
 {
 
     protected $table = 'epis';
-    protected $_fillable =[]; //falta acrescentar os dados
+    protected $_fillable =['equipamento', 'tipo_de_epi','data_de_compra','status'];
 
-    public function TiposDeEpis()
+    public function TiposDeEpi()
     {
-        return $this->belongsTo("App\Model\TipoDeEpis", 'tipos_De_Epis');
+        return $this->belongsTo("App\Model\TipoDeEpi", 'tipos_De_Epis');
     }
 }
