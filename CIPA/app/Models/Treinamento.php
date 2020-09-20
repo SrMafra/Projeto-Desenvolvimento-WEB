@@ -20,4 +20,9 @@ class Treinamento extends Model
     {
         return $this->belongsTo("App\Model\ProfissionalSst", 'nome');
     }
+
+    public function Participante()
+    {
+        return $this->hasMany(RTreinamentoParticipante::class, "treinamentos_id","id");
+    }
 }
