@@ -75,8 +75,8 @@ class FuncaoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $funcao = Funcionario::find($id);
-        $funcao->update($request->all());
+        $funcoes = Funcao::find($id);
+        $funcoes->update($request->all());
 
         return redirect('funcoes')->with('statusUpdate', 'Funcao atualizada com sucesso!');
     }
@@ -89,8 +89,8 @@ class FuncaoController extends Controller
      */
     public function destroy($id)
     {
-        $funcao = Funcionario::find($id);
+        $funcoes = Funcao::find($id);
 
-        return view('funcionario.destroy', ['funcionario' => $funcao]);
+        return view('funcao.destroy', ['funcionario' => $funcoes]);
     }
 }
