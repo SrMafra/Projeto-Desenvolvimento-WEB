@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Funcao;
 
+use App\Models\Funcao;
 use Illuminate\Http\Request;
 
 class FuncaoController extends Controller
@@ -26,7 +26,7 @@ class FuncaoController extends Controller
      */
     public function create()
     {
-        //
+        return view('funcao.add');
     }
 
     /**
@@ -37,7 +37,9 @@ class FuncaoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $funcoes = Funcao::create($request->all());
+
+        return redirect('funcoes')->with('status', 'Nova função cadastrada com sucesso!');
     }
 
     /**
@@ -48,7 +50,7 @@ class FuncaoController extends Controller
      */
     public function show($id)
     {
-        //
+        return $funcoes;
     }
 
     /**
@@ -59,7 +61,9 @@ class FuncaoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $funcoes = Funcao::find('$id');
+
+        return view('funcao.edit', array('funcao' => $funcoes));
     }
 
     /**
