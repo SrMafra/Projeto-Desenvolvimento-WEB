@@ -50,7 +50,7 @@ class FuncaoController extends Controller
      */
     public function show($id)
     {
-        return $funcoes;
+        //return $funcoes;
     }
 
     /**
@@ -75,7 +75,10 @@ class FuncaoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $funcao = Funcionario::find($id);
+        $funcao->update($request->all());
+
+        return redirect('funcoes')->with('statusUpdate', 'Funcao atualizada com sucesso!');
     }
 
     /**
@@ -86,6 +89,8 @@ class FuncaoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $funcao = Funcionario::find($id);
+
+        return view('funcionario.destroy', ['funcionario' => $funcao]);
     }
 }

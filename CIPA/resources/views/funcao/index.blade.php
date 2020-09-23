@@ -3,17 +3,18 @@
 
 @section('content')
 
-    <div class="col-md-12">
-        <div class="panel panel-default">
-
-            <a href="{{ route('funcao.create') }}" class="btn btn-primary"></i>CADASTRAR NOVA FUNÇÃO</a>
-        </div>
-    </div>
-
-    <div class="container-padding">
+    <div class="container-padding" style="min-height: 900px;">
 
         <!-- Start Row -->
         <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+
+                    <a href="{{ route('funcao.create') }}" class="btn btn-primary"></i>CADASTRAR NOVA FUNÇÃO</a>
+                </div>
+            </div>
+
+
 
             <!-- Start Panel -->
             <div class="col-md-12">
@@ -35,15 +36,16 @@
                             </thead>
                             <tbody>
                                 @foreach ($funcoes as $funcao)
-                                <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $funcao->funcao }}</td>
-                                    <td>{{ $funcao->descricao }}</td>
-                                    <td>
-                                        <a href="{{ route('funcao.edit', $funcao->id) }}"><i class="fa fa-edit"></i></a>
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $funcao->funcao }}</td>
+                                        <td>{{ $funcao->descricao }}</td>
+                                        <td>
+                                            <a href="{{ route('funcao.edit', $funcao->id) }}"><i class="fa fa-edit"></i></a>
+                                            <a href="{{ route('funcao.destroy', $funcao->id) }}"><i class="fa fa-trash"></i></a>
 
-                                    </td>
-                                    @endforeach
+                                        </td>
+                                @endforeach
                                 </tr>
                             </tbody>
                         </table>

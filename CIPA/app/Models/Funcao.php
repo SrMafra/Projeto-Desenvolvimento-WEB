@@ -8,5 +8,6 @@ class Funcao extends Model
 {
 
     protected $table = 'funcoes';
-    protected $_fillable = ['funcao', 'descricao'];
+    protected $fillable = ['funcao', 'descricao'];
+    public $timestamps = false;
 }
