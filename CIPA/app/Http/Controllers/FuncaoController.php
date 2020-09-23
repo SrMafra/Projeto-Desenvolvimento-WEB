@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Funcao;
 
 use Illuminate\Http\Request;
 
-class FuncaoController
- extends Controller
+class FuncaoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,9 @@ class FuncaoController
      */
     public function index()
     {
-        //
+        $funcoes = Funcao::All();
+
+        return view('funcao.index', array('funcoes' => $funcoes));
     }
 
     /**

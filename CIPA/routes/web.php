@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\FuncaoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+Route::resource('/funcao', FuncaoController::class);
