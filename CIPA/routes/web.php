@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FuncaoController;
+use App\Http\Controllers\SetorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,7 @@ Route::get('/', function () {
 
 
 Route::resource('/funcao', FuncaoController::class);
+Route::get('/funcao/destroy/{id}', [FuncaoController::class, 'destroyConfirm'])->name('funcao.destroy-confirm');
+
+Route::resource('/setor', SetorController::class);
+Route::get('/setor/destroy/{id}', [SetorController::class, 'destroyConfirm'])->name('setor.destroy-confirm');

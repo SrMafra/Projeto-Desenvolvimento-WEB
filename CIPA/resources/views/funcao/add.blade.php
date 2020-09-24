@@ -26,7 +26,7 @@
                                     <label class="form-label">Descrição</label>
                                     <textarea class="form-control" rows="3" name="descricao"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-default">Cadastrar</button>
+                                <button id="showbottom" type="submit" class="btn btn-default">Cadastrar</button>
                             </fieldset>
                         </form>
 

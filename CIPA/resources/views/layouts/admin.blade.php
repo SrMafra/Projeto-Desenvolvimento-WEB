@@ -79,7 +79,7 @@
 
         <!-- Start Page Header -->
         <div class="page-header">
-            <h1 class="title">FUNÇÕES</h1>
+            <h1 class="title">  @yield('title')</h1>
 
             <!-- Start Page Header Right Div -->
             <div class="right">

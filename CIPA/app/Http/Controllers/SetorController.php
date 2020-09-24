@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Setor;
 use Illuminate\Http\Request;
 
 class SetorController extends Controller
@@ -13,7 +14,8 @@ class SetorController extends Controller
      */
     public function index()
     {
-        //
+        $setores = Setor::All();
+        return view('setor.index', array('setores' => $setores));
     }
 
     /**
@@ -23,7 +25,7 @@ class SetorController extends Controller
      */
     public function create()
     {
-        //
+        return view('setor.add');
     }
 
     /**
@@ -34,7 +36,10 @@ class SetorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $setores = Setor::create($request->all());
+
+        return redirect('setor')->with('status', 'Novo Setor Cadastrado com Sucesso!');
+
     }
 
     /**
@@ -56,7 +61,9 @@ class SetorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $setores = Setor::find($id);
+
+        return view ('setor.edit',array('setor'=>$setores));
     }
 
     /**
@@ -68,7 +75,10 @@ class SetorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $setores = Setor::find($id);
+
+        return redirect('setor')->with('statusUpdate', 'Setor Atualizado com Sucesso!');
+
     }
 
     /**
@@ -79,6 +89,8 @@ class SetorController extends Controller
      */
     public function destroy($id)
     {
-        //
+//$setores = Setor::find($id);
+
+  //      return view('funcao.destroy', ['setor' => $setores]);
     }
 }

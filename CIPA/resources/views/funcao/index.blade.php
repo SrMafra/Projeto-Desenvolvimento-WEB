@@ -21,7 +21,7 @@
                 <div class="panel panel-default">
 
                     <div class="panel-title">
-                        Striped rows
+                        Lista de Funcões
                     </div>
 
                     <div class="panel-body table-responsive">
@@ -29,7 +29,7 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <td>Order ID</td>
+                                    <td>ID</td>
                                     <td>Função</td>
                                     <td>Descrição</td>
                                 </tr>

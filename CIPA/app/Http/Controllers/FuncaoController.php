@@ -39,7 +39,7 @@ class FuncaoController extends Controller
     {
         $funcoes = Funcao::create($request->all());
 
-        return redirect('funcoes')->with('status', 'Nova função cadastrada com sucesso!');
+        return redirect('funcao')->with('status', 'Nova função cadastrada com sucesso!');
     }
 
     /**
@@ -61,7 +61,7 @@ class FuncaoController extends Controller
      */
     public function edit($id)
     {
-        $funcoes = Funcao::find('$id');
+        $funcoes = Funcao::find($id);
 
         return view('funcao.edit', array('funcao' => $funcoes));
     }
@@ -78,7 +78,7 @@ class FuncaoController extends Controller
         $funcoes = Funcao::find($id);
         $funcoes->update($request->all());
 
-        return redirect('funcoes')->with('statusUpdate', 'Funcao atualizada com sucesso!');
+        return redirect('funcao')->with('statusUpdate', 'Funcao atualizada com sucesso!');
     }
 
     /**
@@ -89,8 +89,8 @@ class FuncaoController extends Controller
      */
     public function destroy($id)
     {
-        $funcoes = Funcao::find($id);
+       // $funcoes = Funcao::find($id);
 
-        return view('funcao.destroy', ['funcionario' => $funcoes]);
+        //return view('funcao.destroy', ['funcao' => $funcoes]);
     }
 }

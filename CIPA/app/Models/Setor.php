@@ -8,5 +8,6 @@ class Setor extends Model
 {
 
     protected $table = 'setores';
-    protected $_fillable = ['setor', 'descricao'];
+    protected $fillable = ['setor', 'descricao'];
+    public $timestamps = false;
 }
