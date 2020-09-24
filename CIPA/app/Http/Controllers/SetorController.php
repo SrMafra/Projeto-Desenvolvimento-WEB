@@ -63,7 +63,7 @@ class SetorController extends Controller
     {
         $setores = Setor::find($id);
 
-        return view ('setor.edit',array('setor'=>$setores));
+        return view ('setor.edit', array ('setor' => $setores));
     }
 
     /**
@@ -76,6 +76,7 @@ class SetorController extends Controller
     public function update(Request $request, $id)
     {
         $setores = Setor::find($id);
+        $setores->update($request->all());
 
         return redirect('setor')->with('statusUpdate', 'Setor Atualizado com Sucesso!');
 
