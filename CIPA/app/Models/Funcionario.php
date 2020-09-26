@@ -9,7 +9,8 @@ class Funcionario extends Model
 {
 
     protected $table = 'funcionarios';
-    protected $_fillable =['nome', 'cpf','telefone','setor','funcao'];
+    protected $fillable =['nome', 'cpf','telefone','setor','funcao'];
+    public $timestamps = false;
 
     public function Setor()
     {

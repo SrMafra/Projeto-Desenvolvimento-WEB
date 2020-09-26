@@ -20,9 +20,9 @@
             <li><a href="#"><span class="icon color7"><i class="fa fa-building"></i></span>Industria<span
                         class="caret"></span></a>
                 <ul>
-                    <li><a href="{{ route('funcao.index') }}">Funções</a></li>
+                    <li><a href="{{route('funcao.index') }}">Funções</a></li>
                     <li><a href="{{route('setor.index') }}">Setores</a></li>
-                    <li><a href="#">Funcionarios</a></li>
+                    <li><a href="{{route('funcionario.index') }}">Funcionarios</a></li>
                     <li><a href="#">Advertencias</a></li>
                 </ul>
             </li>
