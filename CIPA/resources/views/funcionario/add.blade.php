@@ -41,15 +41,20 @@
                                 <div class="form-group">
                                     <label for="Setor" class="form-label">Setor</label>
                                     <select class="form-control">
-                                        @foreach ($setores as $setor)
+
+                                        @foreach ($setor as $setor)
+
                                             <option value="{{ $setor->id }}">{{ $setor->setor }}</option>
+
                                         @endforeach
+
+
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="Setor" class="form-label">Função</label>
                                     <select class="form-control">
-                                        @foreach ($funcoes as $funcao)
+                                        @foreach ($funcao as $funcao)
                                             <option value="{{ $funcao->id }}">{{ $funcao->funcao }}</option>
                                         @endforeach
                                     </select>

@@ -19,11 +19,7 @@ class FuncionarioController extends Controller
     {
         $funcionarios = Funcionario::All();
 
-        $funcoes = Funcao::pluck("funcao", "id")->prepend("", "");
-        $setores = Setor::pluck("setor", "id")->prepend("", "");
-
-        return view('funcionario.add', [['funcao' =>$funcoes, 'setor'=>$setores]]);
-        //return view('funcionario.index', array('funcionarios' => $funcionarios));
+        return view('funcionario.index', array('funcionarios' => $funcionarios));
     }
 
     /**
@@ -33,9 +29,10 @@ class FuncionarioController extends Controller
      */
     public function create()
     {
-        $funcoes = Funcao::pluck("funcao", "id")->prepend("", "");
-        $setores = Setor::pluck("setor", "id")->prepend("", "");
-        return view('funcionario.add', [['funcao' =>$funcoes, 'setor'=>$setores]]);
+        $funcoes = Funcao::all();
+        $setores = Setor::all();
+
+        return view('funcionario.add', array ('funcao' =>$funcoes, 'setor'=>$setores));
     }
 
     /**
@@ -47,7 +44,8 @@ class FuncionarioController extends Controller
     public function store(Request $request)
     {
         $funcionarios = Funcionario::create($request->all());
-
+        $funcoes = Funcao::find($request->funcao);
+        $setores = Setor::find($request->setor);
         return redirect('funcionario')->with('status', 'Nova função cadastrada com sucesso!');
     }
 
