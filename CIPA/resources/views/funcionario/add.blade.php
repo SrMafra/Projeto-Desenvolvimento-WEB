@@ -19,8 +19,8 @@
                     <div class="panel-body">
                         <form class="fieldset-form" action="{{ route('funcionario.store') }}" method="post">
                             @csrf
-                            <fieldset>
 
+                            <fieldset>
 
                                 <div class="form-group">
                                     <label for="Funcionario" class="form-label">Nome</label>
@@ -42,7 +42,7 @@
                                     <label for="Setor" class="form-label">Setor</label>
                                     <select class="form-control">
 
-                                        @foreach ($setor as $setor)
+                                        @foreach ($setores as $setor)
 
                                             <option value="{{ $setor->id }}">{{ $setor->setor }}</option>
 
@@ -54,7 +54,7 @@
                                 <div class="form-group">
                                     <label for="Setor" class="form-label">Função</label>
                                     <select class="form-control">
-                                        @foreach ($funcao as $funcao)
+                                        @foreach ($funcoes as $funcao)
                                             <option value="{{ $funcao->id }}">{{ $funcao->funcao }}</option>
                                         @endforeach
                                     </select>

@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'FUNÇÕES')
+@section('title', 'EPI')
 
 @section('content')
 
@@ -10,7 +10,7 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
 
-                    <a href="{{ route('funcao.create') }}" class="btn btn-primary"></i>CADASTRAR NOVA FUNÇÃO</a>
+                    <a href="{{ route('epi.create') }}" class="btn btn-primary"></i>CADASTRAR EPI</a>
                 </div>
             </div>
 
@@ -21,7 +21,7 @@
                 <div class="panel panel-default">
 
                     <div class="panel-title">
-                        Lista de Funcões
+                        Lista de Epi
                     </div>
 
                     <div class="panel-body table-responsive">
@@ -30,19 +30,25 @@
                             <thead>
                                 <tr>
                                     <td>ID</td>
-                                    <td>Função</td>
-                                    <td>Descrição</td>
+                                    <td>equipamento</td>
+                                    <td>Tipo de Epi</td>
+                                    <td>Data de Compra</td>
+                                    <td>Data de Validade</td>
+                                    <td>Status</td>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($funcoes as $funcao)
+                                @foreach ($epis as $epi)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $funcao->funcao }}</td>
-                                        <td>{{ $funcao->descricao }}</td>
+                                        <td>{{ $epi->equipamento }}</td>
+                                        <td>{{ $epi->tipo_de_epi }}</td>
+                                        <td>{{ $epi->data_de_compra }}</td>
+                                        <td>{{ $epi->data_de_validade }}</td>
+                                        <td>{{ $epi->status }}</td>
                                         <td>
-                                            <a href="{{ route('funcao.edit', $funcao->id) }}"><i class="fa fa-edit"></i></a>
-                                            <a href="{{ route('funcao.destroy', $funcao->id) }}"><i class="fa fa-trash"></i></a>
+                                            <a href="{{ route('epi.edit', $epi->id) }}"><i class="fa fa-edit"></i></a>
+                                            <a href="{{ route('epi.destroy', $epi->id) }}"><i class="fa fa-trash"></i></a>
 
                                         </td>
                                 @endforeach

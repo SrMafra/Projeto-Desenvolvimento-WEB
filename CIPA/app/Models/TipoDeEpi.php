@@ -8,5 +8,6 @@ class TipoDeEpi extends Model
 {
 
     protected $table = 'tipos_de_epi';
-    protected $_fillable = ['tipo', 'descricao'];
+    protected $fillable = ['tipo', 'descricao'];
+    public $timestamps = false;
 }

@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'FUNÇÕES')
+@section('title', 'TIPO DE EPIS')
 
 @section('content')
 
@@ -10,7 +10,7 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
 
-                    <a href="{{ route('funcao.create') }}" class="btn btn-primary"></i>CADASTRAR NOVA FUNÇÃO</a>
+                    <a href="{{ route('tipo_de_epi.create') }}" class="btn btn-primary"></i>CADASTRAR NOVO TIPO DE EPI</a>
                 </div>
             </div>
 
@@ -21,7 +21,7 @@
                 <div class="panel panel-default">
 
                     <div class="panel-title">
-                        Lista de Funcões
+                        Lista de Tipos de Epis
                     </div>
 
                     <div class="panel-body table-responsive">
@@ -35,14 +35,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($funcoes as $funcao)
+                                @foreach ($tipo_de_epis as $tipo_de_epi)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $funcao->funcao }}</td>
-                                        <td>{{ $funcao->descricao }}</td>
+                                        <td>{{ $tipo_de_epi->tipo }}</td>
+                                        <td>{{ $tipo_de_epi->descricao }}</td>
                                         <td>
-                                            <a href="{{ route('funcao.edit', $funcao->id) }}"><i class="fa fa-edit"></i></a>
-                                            <a href="{{ route('funcao.destroy', $funcao->id) }}"><i class="fa fa-trash"></i></a>
+                                            <a href="{{ route('tipo_de_epi.edit', $tipo_de_epi->id) }}"><i class="fa fa-edit"></i></a>
+                                            <a href="{{ route('tipo_de_epi.destroy', $tipo_de_epi->id) }}"><i class="fa fa-trash"></i></a>
 
                                         </td>
                                 @endforeach

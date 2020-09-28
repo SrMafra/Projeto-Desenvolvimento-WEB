@@ -1,10 +1,9 @@
 <?php
 
-
 namespace App\Http\Controllers;
 
-use App\Models\Funcionario;
 use App\Models\Funcao;
+use App\Models\Funcionario;
 use App\Models\Setor;
 use Illuminate\Http\Request;
 
@@ -32,7 +31,7 @@ class FuncionarioController extends Controller
         $funcoes = Funcao::all();
         $setores = Setor::all();
 
-        return view('funcionario.add', array ('funcao' =>$funcoes, 'setor'=>$setores));
+        return view('funcionario.add', array('funcoes' => $funcoes, 'setores' => $setores));
     }
 
     /**
@@ -44,8 +43,10 @@ class FuncionarioController extends Controller
     public function store(Request $request)
     {
         $funcionarios = Funcionario::create($request->all());
-        $funcoes = Funcao::find($request->funcao);
+
         $setores = Setor::find($request->setor);
+        $funcoes = Funcao::find($request->funcao);
+
         return redirect('funcionario')->with('status', 'Nova função cadastrada com sucesso!');
     }
 
@@ -70,7 +71,10 @@ class FuncionarioController extends Controller
     {
         $funcionarios = Funcionario::find($id);
 
-        return view('funcionario.edit', array('funcionario' => $funcionarios));
+        $funcoes = Funcao::all();
+        $setores = Setor::all();
+
+        return view('funcionario.edit', array('funcionarios' => $funcionarios, 'funcoes' => $funcoes, 'setores' => $setores));
     }
 
     /**
@@ -82,8 +86,13 @@ class FuncionarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $funcionarios = funcionario::find($id);
+        $funcionarios = Funcionario::find($id);
+        //$funcoes = Funcao::find($id);
+        //$setores = Setores::find($id);
+
         $funcionarios->update($request->all());
+        //$funcoes->update($request->all());
+        //$setores->update($request->all());
 
         return redirect('funcionario')->with('statusUpdate', 'funcionario atualizada com sucesso!');
     }
@@ -96,7 +105,7 @@ class FuncionarioController extends Controller
      */
     public function destroy($id)
     {
-       // $funcionarios = funcionario::find($id);
+        // $funcionarios = funcionario::find($id);
 
         //return view('funcionario.destroy', ['funcionario' => $funcionarios]);
     }

@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'FUNÇÕES')
+@section('title', 'TIPO DE EPIS')
 
 @section('content')
     <div class="container-padding" style="min-height: 900px;">
@@ -10,17 +10,17 @@
                 <div class="panel panel-default">
 
                     <div class="panel-title">
-                        Cadastro de Funções
+                        Cadastro de Tipo de Epi
                     </div>
 
                     <div class="panel-body">
-                        <form class="fieldset-form" action="{{ route('funcao.store') }}" method="post">
+                        <form class="fieldset-form" action="{{ route('tipo_de_epi.store') }}" method="post">
                             @csrf
                             <fieldset>
 
                                 <div class="form-group">
-                                    <label for="funcao" class="form-label">Função</label>
-                                    <input type="text" class="form-control" id="funcao" name="funcao">
+                                    <label for="Tipo" class="form-label">Tipo</label>
+                                    <input type="text" class="form-control" id="Tipo" name="tipo">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Descrição</label>

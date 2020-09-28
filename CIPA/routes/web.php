@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FuncaoController;
 use App\Http\Controllers\SetorController;
 use App\Http\Controllers\FuncionarioController;
+use App\Http\Controllers\TipoDeEpiController;
+use App\Http\Controllers\EpiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,3 +31,10 @@ Route::get('/setor/destroy/{id}', [SetorController::class, 'destroyConfirm'])->n
 
 Route::resource('/funcionario', FuncionarioController::class);
 Route::get('/funcionario/destroy/{id}', [FuncionarioController::class, 'destroyConfirm'])->name('funcionario.destroy-confirm');
+
+
+Route::resource('/tipo_de_epi', TipoDeEpiController::class);
+Route::get('/tipo_de_epi/destroy/{id}', [TipoDeEpiController::class, 'destroyConfirm'])->name('tipo_de_epi.destroy-confirm');
+
+Route::resource('/epi', EpiController::class);
+Route::get('/epi/destroy/{id}', [EpiController::class, 'destroyConfirm'])->name('epi.destroy-confirm');
